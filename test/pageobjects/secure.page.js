@@ -12,6 +12,11 @@ class SecurePage extends Page {
     get flashAlert () {
         return $('#flash');
     }
+
+    sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      
 }
 
 module.exports = new SecurePage();
