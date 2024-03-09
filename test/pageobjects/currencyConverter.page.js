@@ -28,6 +28,21 @@ class CurrencyConverter extends Page {
     get ConvertedFullAmount(){
         return $('.result__BigRate-sc-1bsijpp-1')
     }
+
+    get SwapCurrenciesBtn(){
+        return $("//button[@aria-label = 'Swap currencies']")
+    }
+
+    get SourceCurrencyText(){
+        return $("#midmarketFromCurrency-descriptiveText")
+    }
+
+    get TargetCurrencyText(){
+        return $("#midmarketToCurrency-descriptiveText")
+    }
+
+
+
     async EnterAmount (amount) {
         await this.AmountInputfield.setValue(amount);
     }
@@ -44,6 +59,10 @@ class CurrencyConverter extends Page {
         await this.TargetCurrencyField.click()
         await this.TargetCurrencyField.setValue(targetCurrency)
         await $(`//*[contains(@class,'converterform-dropdown__option') or contains(@class,'ListboxOption')][contains(.,'${targetCurrency}')]`).click();
+    }
+
+    async SwapCurrencies(){
+        await this.SwapCurrenciesBtn.click()
     }
 }
 

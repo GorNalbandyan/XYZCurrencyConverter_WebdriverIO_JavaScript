@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "wdio": "echo \"Error: no test specified\" && exit 1"
+    "wdio": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node --inspect-brk test/specs/Conversion/swapCurrencies.e2e.js"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +18,7 @@
     "@wdio/mocha-framework": "^8.11.0",
     "@wdio/spec-reporter": "^8.11.2",
     "allure-commandline": "^2.22.4",
-    "chromedriver": "^114.0.2",
+    "chromedriver": "^122.0.4",
     "wdio-chromedriver-service": "^8.1.1"
   }
 }
